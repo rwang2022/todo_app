@@ -93,11 +93,10 @@
 	$: test2 = checkAll();
 </script>
 
-<h1>this is a basic todo app, index.svelte</h1>
 {#if test2}
-	<h1 style="color: green;">You have finished all tasks! ✅</h1>
+	<h1 style="color: green; text-align: center;">You have finished all tasks! ✅</h1>
 {:else}
-	<h1 style="color: red;">You have not finished all tasks. ❌</h1>
+	<h1 style="color: red; text-align: center;">You have not finished all tasks. ❌</h1>
 {/if}
 
 <table>
@@ -154,19 +153,13 @@
 		width: auto;
 		height: auto;
 	}
-	/* table {
-		width: 70%;
-	}
-	table,
-	td {
-		border: 1px solid black;
-		border-collapse: collapse;
-	} */
 
 	/* stolen */
 	table {
+		margin-left: auto;
+		margin-right: auto;
+
 		border-collapse: collapse;
-		margin: 25px 0;
 		font-size: 0.9em;
 		font-family: sans-serif;
 		min-width: 400px;
