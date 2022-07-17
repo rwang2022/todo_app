@@ -33,9 +33,8 @@ https://stackoverflow.com/a/54457105/17197153
 
         $: test2 = checkAll();
 
-
+https://svelte.dev/repl/d99826cdac4f4fdf8064f5b6a31676ff?version=3.18.2
 ### register key presses 
-    // unexplained: https://svelte.dev/repl/d99826cdac4f4fdf8064f5b6a31676ff?version=3.18.2
     const onKeyPress = (e) => {
     if (e.charCode === 13) {
         addToList();
