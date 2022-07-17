@@ -115,7 +115,7 @@
 	<tr>
 		<td>
 			<button on:click={finishAll}>complete all</button>
-			<button on:click={unfinishAll}>unfinish all</button>
+			<button on:click={unfinishAll}>empty all</button>
 		</td>
 		<td>Your Tasks</td>
 		<td>
@@ -148,10 +148,14 @@
 	button {
 		width: 120px;
 		height: 30px;
+		font-size: large;
 	}
 	input {
 		width: auto;
 		height: auto;
+		min-width: 300px;
+		min-height: 40px;
+		font-size: large;
 	}
 
 	/* stolen */
@@ -160,7 +164,7 @@
 		margin-right: auto;
 
 		border-collapse: collapse;
-		font-size: 0.9em;
+		font-size: large;
 		font-family: sans-serif;
 		min-width: 400px;
 		box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
