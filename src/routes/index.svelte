@@ -163,55 +163,38 @@
 		border-collapse: collapse;
 	} */
 
-	/* copied from https://codepen.io/hbuchel/pen/jOGbGE */
+	/* stolen */
 	table {
-		display: block;
+		border-collapse: collapse;
+		margin: 25px 0;
+		font-size: 0.9em;
+		font-family: sans-serif;
+		min-width: 400px;
+		box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 	}
-	tr,
-	td,
-	tbody,
-	tfoot {
-		display: block;
-	}
-	thead {
-		display: none;
-	}
-	tr {
-		padding-bottom: 10px;
-	}
-	td {
-		padding: 10px 10px 0;
-		text-align: center;
-		&:before {
-			content: attr(data-title);
-			color: lighten($rain, 35%);
-			text-transform: uppercase;
-			font-size: 1.4rem;
-			padding-right: 10px;
-			display: block;
-		}
-	}
-	table {
-		width: 100%;
+	table thead tr {
+		background-color: #009879;
+		color: #ffffff;
+		text-align: left;
 	}
 
-	th {
-		text-align: left;
-		font-weight: 700;
+	td {
+		padding: 12px 15px;
 	}
-	thead {
-		th {
-			background-color: darken($rain, 6%);
-			color: #fff;
-			border: 1px solid darken($rain, 6%);
-		}
+
+	table tr {
+		border-bottom: 1px solid #dddddd;
 	}
-	tfoot {
-		th {
-			display: block;
-			padding: 10px;
-			text-align: center;
-			color: lighten($rain, 55%);
-		}
+
+	table tr:nth-of-type(even) {
+		background-color: #f3f3f3;
+	}
+
+	table tr:nth-of-type(odd) {
+		background-color: #80808084;
+	}
+
+	table tr:last-of-type {
+		border-bottom: 2px solid #009879;
 	}
 </style>
