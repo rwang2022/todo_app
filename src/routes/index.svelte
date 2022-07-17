@@ -53,9 +53,11 @@
 		// // remove people that like blue
 		// array.filter((x) => x.faveColor === 'blue').forEach((x) => array.splice(array.indexOf(x), 1));
 
-        // remove items that have status (finished) as true
-		todolist.filter((x) => x.status === true).forEach((x) => todolist.splice(todolist.indexOf(x), 1));
-        todolist = todolist;
+		// remove items that have status (finished) as true
+		todolist
+			.filter((x) => x.status === true)
+			.forEach((x) => todolist.splice(todolist.indexOf(x), 1));
+		todolist = todolist;
 	}
 
 	function convertDate(date) {
@@ -148,16 +150,68 @@
 		width: 120px;
 		height: 30px;
 	}
-	table {
+	input {
+		width: auto;
+		height: auto;
+	}
+	/* table {
 		width: 70%;
 	}
 	table,
 	td {
 		border: 1px solid black;
 		border-collapse: collapse;
+	} */
+
+	/* copied from https://codepen.io/hbuchel/pen/jOGbGE */
+	table {
+		display: block;
 	}
-	input {
-		width: auto;
-		height: auto;
+	tr,
+	td,
+	tbody,
+	tfoot {
+		display: block;
+	}
+	thead {
+		display: none;
+	}
+	tr {
+		padding-bottom: 10px;
+	}
+	td {
+		padding: 10px 10px 0;
+		text-align: center;
+		&:before {
+			content: attr(data-title);
+			color: lighten($rain, 35%);
+			text-transform: uppercase;
+			font-size: 1.4rem;
+			padding-right: 10px;
+			display: block;
+		}
+	}
+	table {
+		width: 100%;
+	}
+
+	th {
+		text-align: left;
+		font-weight: 700;
+	}
+	thead {
+		th {
+			background-color: darken($rain, 6%);
+			color: #fff;
+			border: 1px solid darken($rain, 6%);
+		}
+	}
+	tfoot {
+		th {
+			display: block;
+			padding: 10px;
+			text-align: center;
+			color: lighten($rain, 55%);
+		}
 	}
 </style>
