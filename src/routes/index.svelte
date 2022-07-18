@@ -126,12 +126,12 @@
 		<td>Status of Task</td>
 	</tr>
 	{#each todolist as item, index}
-		<tr>
+		<tr class:checked={item.status}>
 			<td><input type="checkbox" class="checkbox" bind:checked={item.status} /></td>
-			<td><span class:checked={item.status}>{item.text}</span></td>
+			<td><span>{item.text}</span></td>
 			<td><button on:click={() => removeFromList(index)}> ❌ </button></td>
-			<td><span class:checked={item.status}>{convertDate(item.dateAdded)}</span></td>
-			<td><span class:checked={item.status}>{item.status}</span></td>
+			<td><span>{convertDate(item.dateAdded)}</span></td>
+			<td><span>{item.status}</span></td>
 		</tr>
 	{/each}
 </table>
