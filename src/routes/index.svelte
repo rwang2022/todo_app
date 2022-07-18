@@ -130,8 +130,8 @@
 			<td><input type="checkbox" class="checkbox" bind:checked={item.status} /></td>
 			<td><span class:checked={item.status}>{item.text}</span></td>
 			<td><button on:click={() => removeFromList(index)}> ❌ </button></td>
-			<td>{convertDate(item.dateAdded)}</td>
-			<td>{item.status}</td>
+			<td><span class:checked={item.status}>{convertDate(item.dateAdded)}</span></td>
+			<td><span class:checked={item.status}>{item.status}</span></td>
 		</tr>
 	{/each}
 </table>
