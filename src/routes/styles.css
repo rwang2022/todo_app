@@ -1,0 +1,68 @@
+:root {
+    --sea-green: #a2d9d4;
+    --dark-sea-green: #f4d06f;
+}
+.checked {
+    color: crimson;
+    text-decoration: line-through;
+}
+.checkbox {
+    width: 30px;
+    height: 30px;
+}
+body {
+    background-color: var(--sea-green);
+}
+h1 {
+    text-align: center;
+}
+button {
+    width: 120px;
+    height: 40px;
+    font-size: large;
+}
+input {
+    width: auto;
+    height: auto;
+    min-width: 300px;
+    min-height: 40px;
+    font-size: large;
+}
+
+/* stolen */
+table {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+
+    border-collapse: collapse;
+    font-size: large;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+
+td {
+    padding: 12px 15px;
+}
+
+table tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+table tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+table tr:nth-of-type(odd) {
+    background-color: #80808084;
+}
+
+table tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}

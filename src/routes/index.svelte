@@ -11,8 +11,7 @@
 		{ text: '4: go to school', status: true, dateAdded: new Date() },
 		{ text: '5: go to school', status: false, dateAdded: new Date() },
 		{ text: '6: go to school', status: false, dateAdded: new Date() },
-		{ text: '7: go to school', status: true, dateAdded: new Date() },
-		{ text: '8: go to school', status: true, dateAdded: new Date() }
+		{ text: '7: go to school', status: true, dateAdded: new Date() }
 	];
 
 	// unexplained: https://svelte.dev/repl/d99826cdac4f4fdf8064f5b6a31676ff?version=3.18.2
@@ -93,50 +92,63 @@
 	$: test2 = checkAll();
 </script>
 
-{#if test2}
-	<h1 style="color: green; text-align: center;">You have finished all tasks! ✅</h1>
-{:else}
-	<h1 style="color: red; text-align: center;">You have not finished all tasks. ❌</h1>
-{/if}
+<html lang="en">
+	<head>
+		<title>To-Do List</title>
+	</head>
 
-<table>
-	<tr>
-		<td>Add task here</td>
-		<td
-			><input
-				type="text"
-				placeholder="Add Task Here"
-				on:keypress={onKeyPress}
-				bind:value={task}
-			/></td
-		>
-		<td><button on:click={addToList}>add task</button></td>
-	</tr>
-	<tr>
-		<td>
-			<button on:click={finishAll}>complete all</button>
-			<button on:click={unfinishAll}>empty all</button>
-		</td>
-		<td>Your Tasks</td>
-		<td>
-			<button on:click={clearEntireList}>clear all</button>
-			<button on:click={clearFinishedList}>clear finished</button>
-		</td>
-		<td>Date Added</td>
-		<td>Status of Task</td>
-	</tr>
-	{#each todolist as item, index}
-		<tr class:checked={item.status}>
-			<td><input type="checkbox" class="checkbox" bind:checked={item.status} /></td>
-			<td><span>{item.text}</span></td>
-			<td><button on:click={() => removeFromList(index)}> ❌ </button></td>
-			<td><span>{convertDate(item.dateAdded)}</span></td>
-			<td><span>{item.status}</span></td>
-		</tr>
-	{/each}
-</table>
+	<body>
+		<h1 style="color: #C8553D;">amazing earth-shattering never-before-seen To-Do List</h1>
+
+		{#if test2}
+			<h1 style="color: green;">You have finished all tasks! ✅</h1>
+		{:else}
+			<h1 style="color: red;">You have not finished all tasks. ❌</h1>
+		{/if}
+
+		<table>
+			<tr style="background-color: var(--dark-sea-green);">
+				<td>Add task here</td>
+				<td
+					><input
+						type="text"
+						placeholder="Add Task Here"
+						on:keypress={onKeyPress}
+						bind:value={task}
+					/></td
+				>
+				<td><button on:click={addToList}>add task</button></td>
+				<td />
+			</tr>
+			<tr>
+				<td>
+					<button on:click={finishAll}>complete all</button>
+					<button on:click={unfinishAll}>empty all</button>
+				</td>
+				<td>Your Tasks</td>
+				<td>
+					<button on:click={clearEntireList}>clear all</button>
+					<button on:click={clearFinishedList}>clear finished</button>
+				</td>
+				<td>Date Added</td>
+			</tr>
+			{#each todolist as item, index}
+				<tr class:checked={item.status}>
+					<td><input type="checkbox" class="checkbox" bind:checked={item.status} /></td>
+					<td><span>{item.text}</span></td>
+					<td><button on:click={() => removeFromList(index)}> ❌ </button></td>
+					<td><span>{convertDate(item.dateAdded)}</span></td>
+				</tr>
+			{/each}
+		</table>
+	</body>
+</html>
 
 <style>
+	:root {
+		--sea-green: #a2d9d4;
+		--dark-sea-green: #f4d06f;
+	}
 	.checked {
 		color: crimson;
 		text-decoration: line-through;
@@ -145,9 +157,17 @@
 		width: 30px;
 		height: 30px;
 	}
+
+	h1 {
+		text-align: center;
+		font-size: 30pt;
+	}
+	body {
+		background-color: var(--sea-green);
+	}
 	button {
 		width: 120px;
-		height: 30px;
+		height: 40px;
 		font-size: large;
 	}
 	input {
@@ -162,6 +182,7 @@
 	table {
 		margin-left: auto;
 		margin-right: auto;
+		text-align: center;
 
 		border-collapse: collapse;
 		font-size: large;
@@ -174,23 +195,18 @@
 		color: #ffffff;
 		text-align: left;
 	}
-
 	td {
 		padding: 12px 15px;
 	}
-
 	table tr {
 		border-bottom: 1px solid #dddddd;
 	}
-
 	table tr:nth-of-type(even) {
 		background-color: #f3f3f3;
 	}
-
 	table tr:nth-of-type(odd) {
 		background-color: #80808084;
 	}
-
 	table tr:last-of-type {
 		border-bottom: 2px solid #009879;
 	}
